@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
 :root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     --Vermelho: #D6000D;
 }
 
@@ -7,14 +9,13 @@
 /* RESETS */
 
 * {
+    outline: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 100%;
     list-style: none;
     text-decoration: none;
     border: none;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -27,7 +28,7 @@ header {
     align-items: center;
     flex-direction: column;
     height: 100px;
-    margin: 20px 0;
+    padding-top: 50px;
 }
 
 header .loggin__btn {
@@ -55,6 +56,7 @@ header nav ul li {
 header nav ul li a {
     font-size: 1.2rem;
     color: #000;
+    transition: .7s;
 }
 
 
@@ -62,6 +64,7 @@ header nav ul li a {
 
 main {
     width: 100%;
+    margin: 30px 0;
 }
 
 
@@ -106,6 +109,8 @@ main {
     background-color: var(--Vermelho);
     font-size: 1.2rem;
     color: #fff;
+    border: 1px solid var(--Vermelho);
+    transition: .7s;
 }
 
 
@@ -138,11 +143,16 @@ main {
 
 /* services__Contato */
 
-.services__Contato {
+.services__Contato div,
+.services__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.services__Contato div {
+    text-align: center;
 }
 
 .services__Contato h2 {
@@ -160,7 +170,7 @@ main {
 }
 
 .services__Contato input::placeholder {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-left: 20px;
     color: rgb(129, 124, 124);
 }
@@ -170,11 +180,13 @@ main {
     background-color: var(--Vermelho);
     color: #fff;
     font-size: 1.3rem;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 30px;
     text-align: center;
     margin-bottom: 40px;
     font-weight: bold;
+    border: 1px solid var(--Vermelho);
+    transition: .7s;
 }
 
 
@@ -189,7 +201,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 20px auto;
-    background: rgb(194, 190, 190);
+    background: #ddd;
     padding: 20px;
     border-radius: 20px;
     line-height: 1.2;
@@ -221,10 +233,231 @@ main {
 }
 
 
+/* FOOTER */
+
+footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo__footer,
+.footer__sobre,
+.footer__contato,
+.footer_redesSociais {
+    margin: 40px 0;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.redesSociais__box i {
+    font-size: 2rem;
+    padding: 10px;
+    color: var(--Vermelho);
+    transition: .7s;
+}
+
+.logo__footer span {
+    color: var(--Vermelho);
+}
+
+.footer__contato address a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+
+/* CREDITOS */
+
+.creditos {
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.creditos a {
+    color: #fff;
+}
+
+.creditos a span {
+    color: #F4CF0A;
+}
+
+.creditos img {
+    color: #fff;
+    width: 10px;
+    height: 10px;
+}
+
+.red {
+    color: var(--Vermelho);
+}
+
+.yellow {
+    color: #F4CF0A;
+}
+
+
 /* MEDIA QUERY */
 
 @media screen and (min-width: 768px) {
     header {
-        background-color: green;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: 100px;
+        padding: 50px;
+    }
+    header .loggin__btn {
+        display: block;
+        background-color: var(--Vermelho);
+        color: #fff;
+        font-size: 1rem;
+        padding: 5px 40px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid var(--Vermelho);
+        transition: .7s;
+    }
+    header .loggin__btn:hover {
+        background-color: transparent;
+    }
+    header nav ul li {
+        padding: 0 10px;
+    }
+    header nav ul li a:hover {
+        color: var(--Vermelho);
+        border-bottom: 1px solid var(--Vermelho);
+    }
+    /* ORÇAMENTO */
+    .orcamento {
+        margin: 0 auto;
+        flex-direction: row;
+        width: 90%;
+    }
+    .orcamento img {
+        width: 40%;
+        margin: 0;
+    }
+    .orcamento__content {
+        width: 55%;
+        text-align: center;
+        height: 300px;
+    }
+    .orcamento__content h3 {
+        margin: 30px 0;
+    }
+    .btn__orcamento:hover {
+        color: var(--Vermelho);
+        background-color: transparent;
+    }
+    .orcamento img {
+        width: 30%;
+    }
+    /* SERVICES */
+    .services {
+        width: 100%;
+    }
+    .services__box {
+        width: 90%;
+        flex-direction: row;
+        margin: 50px 0;
+    }
+    .services__boxImg {
+        order: 2;
+        width: 30%;
+    }
+    .services__list {
+        display: flex;
+        justify-content: center;
+        order: 1;
+        width: 65%;
+        margin-left: 5rem;
+    }
+    /* SERVICES CONTTO */
+    .services__Contato {
+        width: 70%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+    .services__Contato div {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .services__Contato h2 {
+        padding: 20px 0;
+    }
+    .services__Contato input {
+        margin: 0;
+        width: 300px;
+        border-radius: 10px;
+    }
+    .services__Contato .services__Btn {
+        margin: 0;
+        margin-left: 10px;
+        width: 35%;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+    }
+    .services__Contato .services__Btn:hover {
+        background-color: transparent;
+        color: var(--Vermelho);
+    }
+    /* DEPOIMENTOS */
+    .depoimentos {
+        display: flex;
+        justify-content: space-around;
+    }
+    .depoimentos__box {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        margin: 50px 0;
+    }
+    .depoimentos__box img {
+        width: 80px;
+        height: 80px;
+        margin-top: 0;
+        margin-right: 20px;
+    }
+    /* FOOTER */
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+    .logo__footer,
+    .footer_sobre,
+    .footer__contato,
+    .footer_redesSociais {
+        padding: 0 20px;
+    }
+    footer h2 {
+        font-size: 1.3rem;
+    }
+    footer p {
+        font-size: 1rem;
+    }
+    .logo__footer h2 {
+        font-size: 2rem;
+    }
+    .redesSociais__box i {
+        font-size: 1.5rem;
+    }
+    .redesSociais__box i:hover {
+        color: #fff;
     }
 }
